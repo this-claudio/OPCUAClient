@@ -7,3 +7,13 @@ C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\P
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.csproj.CoreCompileInputs.cache
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.dll
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.AssemblyInfoInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.AssemblyInfo.cs
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.csproj.CoreCompileInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\bin\Debug\netcoreapp3.1\OpcUaClient.deps.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\bin\Debug\netcoreapp3.1\OpcUaClient.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\bin\Debug\netcoreapp3.1\OpcUaClient.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\OpcUaClient\obj\Debug\netcoreapp3.1\OpcUaClient.csproj.AssemblyReference.cache

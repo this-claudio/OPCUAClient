@@ -44,9 +44,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Opc.UaFx.Client": {
+            "OPCFoundation.NetStandard.Opc.Ua": {
               "target": "Package",
-              "version": "[2.26.0, )"
+              "version": "[1.4.368.58, )"
             }
           },
           "imports": [

@@ -1,27 +1,30 @@
-﻿using System;
+﻿
 using OpcUaCommon;
+using System;
 
-namespace System
+namespace MyHomework
 {
-    class TestRun
+    class Program
     {
         static void Main(string[] args)
-        {            
-            ClassOPCClient client = null;
-            try
-            {
-                client = new ClassOPCClient("opc.tcp://SQO-053.energpower.com.br:4840");
-                client.SetNodeValue("ns=3;i=1013", "102");
-            }
-            catch(Exception Error)
-            {
-               
-                Console.WriteLine(Error.Message);
-            }
+        {
 
-            var a = client.GetNodeValue("ns=3;i=1009");
-            Console.WriteLine(a.ToString());
+            var Cliente = new ClassOPCClient("your-ip", "4840","abcd","1234");
+            Cliente.Conectar();
+            string Connected = Cliente.oSession.Connected.ToString();
+
+
+            Console.WriteLine(Connected);
+
+            var NodeValue = (bool)Cliente.GetNodeValue("ns=3;i=1015");
+            Console.WriteLine("Leitura do nó: "+ NodeValue.ToString());
+
+            Cliente.SetNodeValue("ns=3;i=1015", true);
+
+            Console.ReadLine();
             
         }
+
+       
     }
 }
