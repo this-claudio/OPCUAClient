@@ -1,87 +1,238 @@
-﻿using Opc.Ua;
-using Opc.UaFx;
-using Opc.UaFx.Client;
+﻿/* ========================================================================
+ * Copyright (c) 2005-2019 The OPC Foundation, Inc. All rights reserved.
+ *
+ * OPC Foundation MIT License 1.00
+ * 
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * The complete license agreement can be found here:
+ * http://opcfoundation.org/License/MIT/1.00/
+ *
+ * 
+ * 
+ * This code was made basead on this sample repository: 
+ * https://github.com/OPCFoundation/UA-.NETStandard-Samples/tree/master/Samples/NetCoreConsoleClient
+ * 
+ * 
+ * 
+ * ======================================================================*/
+
+
+using Opc.Ua;   // Install-Package OPCFoundation.NetStandard.Opc.Ua
+using Opc.Ua.Client;
+using Opc.Ua.Configuration;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net;
 
 namespace OpcUaCommon
 {
     public class ClassOPCClient
     {
-        string sAddress = string.Empty;
+        private SessionReconnectHandler reconnectHandler;
 
-        OpcClient oConnection = null;
+        public string sEndereco { get; set; }
+        public int nPorta { get; set; }
+        public string sUser { get; set; }
+        public string sPassWord { get; set; }
+        public Session oSession { get; set; }
+        public int ReconnectPeriod { get; private set; }
 
-        public ClassOPCClient(string sConnection)
+        public ClassOPCClient(string sEndereco, string sPorta, string sUser = "", string sPassWord = "")
         {
-            sAddress = sConnection;
-            oConnection = new OpcClient(sAddress);
-            oConnection.Security.EndpointPolicy = new OpcSecurityPolicy(OpcSecurityMode.None);
+            this.sEndereco = sEndereco;
+            this.nPorta = Convert.ToInt32(sPorta);
+            this.sUser = sUser;
+            this.sPassWord = sPassWord;
+            ReconnectPeriod = 10;
+        }
 
 
-            try
+        public void Conectar()
+        {
+            Console.WriteLine("Step 1 - Create application configuration and certificate.");
+            var config = new ApplicationConfiguration()
             {
-                oConnection.Connect();
+                ApplicationName = "MyOPCUAClass",
+                ApplicationUri = Utils.Format(@"urn:{0}:MyOPCUAClass", System.Net.Dns.GetHostName()),
+                ApplicationType = ApplicationType.Client,
+                SecurityConfiguration = new SecurityConfiguration
+                {
+                    ApplicationCertificate = new CertificateIdentifier { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\MachineDefault", SubjectName = "MyOPCUAClass" },
+                    TrustedIssuerCertificates = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\UA Certificate Authorities" },
+                    TrustedPeerCertificates = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\UA Applications" },
+                    RejectedCertificateStore = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\RejectedCertificates" },
+                    AutoAcceptUntrustedCertificates = true
+                },
+                TransportConfigurations = new TransportConfigurationCollection(),
+                TransportQuotas = new TransportQuotas { OperationTimeout = 15000 },
+                ClientConfiguration = new ClientConfiguration { DefaultSessionTimeout = 60000 },
+                TraceConfiguration = new TraceConfiguration()
+            };
+            config.Validate(ApplicationType.Client).GetAwaiter().GetResult();
+            if (config.SecurityConfiguration.AutoAcceptUntrustedCertificates)
+            {
+                config.CertificateValidator.CertificateValidation += (s, e) => { e.Accept = (e.Error.StatusCode == StatusCodes.BadCertificateUntrusted); };
             }
-            catch (Exception e)
+
+            var application = new ApplicationInstance
             {
-                throw new Exception(e.Message);
+                ApplicationName = "MyOPCUAClass",
+                ApplicationType = ApplicationType.Client,
+                ApplicationConfiguration = config
+            };
+            application.CheckApplicationInstanceCertificate(false, 2048).GetAwaiter().GetResult();
+            //var servers = CoreClientUtils.DiscoverServers(config);
+
+            bool UserSeguranca = (string.IsNullOrEmpty(sUser) || string.IsNullOrEmpty(sPassWord)) ? false : true;
+
+            EndpointDescription oSelectedEndpoint = CoreClientUtils.SelectEndpoint("opc.tcp://SQO-053.mshome.net:4840", useSecurity: UserSeguranca);
+            UserIdentity oNewUser = (string.IsNullOrEmpty(sUser) || string.IsNullOrEmpty(sPassWord)) ? null : new UserIdentity(this.sUser,this.sPassWord);
+
+            Console.WriteLine($"Step 2 - Create a session with your server: {oSelectedEndpoint.EndpointUrl} ");
+            this.oSession = Session.Create(config, new ConfiguredEndpoint(null, oSelectedEndpoint, EndpointConfiguration.Create(config)), false, "", 60000, oNewUser, null).GetAwaiter().GetResult();
+            this.oSession.KeepAlive += ClientKeepAlive;
+
+        }
+
+        private void ClientKeepAlive(Session sender, KeepAliveEventArgs e)
+        {
+            if (e.Status != null && ServiceResult.IsNotGood(e.Status))
+            {
+                Console.WriteLine("{0} {1}/{2}", e.Status, sender.OutstandingRequestCount, sender.DefunctRequestCount);
+
+                if (reconnectHandler == null)
+                {
+                    Console.WriteLine("--- RECONNECTING ---");
+                    reconnectHandler = new SessionReconnectHandler();
+                    reconnectHandler.BeginReconnect(sender, ReconnectPeriod * 1000, Client_ReconnectComplete);
+                }
             }
         }
 
-        public void SetNodeValue(string sNode, string sValue)
+        private void Client_ReconnectComplete(object sender, EventArgs e)
         {
-            Checkconnection();
-
-            var Tipo = oConnection.ReadNode(sNode).DataType;
-            switch (Tipo)
+            // ignore callbacks from discarded objects.
+            if (!Object.ReferenceEquals(sender, reconnectHandler))
             {
-                case OpcDataType.Boolean:
-                    var ValorBool = Convert.ToBoolean(sValue);
-                    oConnection.WriteNode(sNode, ValorBool); break;
-                case OpcDataType.String:
-                    var ValorString = Convert.ToString(sValue);
-                    oConnection.WriteNode(sNode, ValorString); break;
-                case OpcDataType.Int16:
-                    var ValorInt16 = Convert.ToInt16(sValue);
-                    oConnection.WriteNode(sNode, ValorInt16); break;
-                case OpcDataType.Int32:
-                    var ValorInt32 = Convert.ToInt32(sValue);
-                    oConnection.WriteNode(sNode, ValorInt32); break;
+                return;
             }
+
+            this.oSession = reconnectHandler.Session;
+            reconnectHandler.Dispose();
+            reconnectHandler = null;
+
+            Console.WriteLine("--- RECONNECTED ---");
+        }
+
+
+        public void SetNodeValue(string sNode, object oValue)
+        {
+            WriteValue Node = new WriteValue();
+            Node.NodeId = new NodeId(sNode);
+            Node.AttributeId = Attributes.Value;
+            Node.Value = new DataValue();
+            Node.Value.Value = oValue;
+
+            WriteValueCollection WriteNode = new WriteValueCollection();
+            WriteNode.Add(Node);
+
+            StatusCodeCollection ResultWrite = new StatusCodeCollection();
+            DiagnosticInfoCollection Diagnosticwrite = new DiagnosticInfoCollection();
+
+            try
+            {
+                this.oSession.Write(null, WriteNode, out ResultWrite, out Diagnosticwrite);
+
+                if (ResultWrite.Count <= 0)
+                {
+                    throw new Exception("Não foi possivel escrever o valor");
+                }
+            }
+            catch (Exception e)
+            { throw new Exception("Não foi possivel ler o sinal, devido a: " + e.ToString()); }
+
+
         }
 
         public object GetNodeValue(string sNode)
         {
-            Checkconnection();
-            var Response = oConnection.ReadNode(sNode);
-            switch (Response.DataType)
+
+            ReadValueId node = new ReadValueId();
+            node.NodeId = new NodeId(sNode);
+            node.AttributeId = Attributes.Value;
+
+            ReadValueIdCollection readnodes = new ReadValueIdCollection();
+            readnodes.Add(node);
+
+            DataValueCollection ResultRead = new DataValueCollection();
+            DiagnosticInfoCollection Diagnostic = new DiagnosticInfoCollection();
+
+            try
             {
-                case OpcDataType.Boolean:
-                    return (bool)Response.Value;
-                case OpcDataType.String:
-                    return Response.Value.ToString();
-                case OpcDataType.Int16:
-                    return Convert.ToInt32(Response.Value);
-                case OpcDataType.Int32:
-                    return Convert.ToInt32(Response.Value);
-                default: return null;
+                this.oSession.Read(null, 10.0, new TimestampsToReturn(), readnodes, out ResultRead, out Diagnostic);
+
+                if (ResultRead.Count > 0)
+                {
+                    return ResultRead[0].Value;
+                }
+                else return null;
             }
+            catch(Exception e) 
+            { throw new Exception("Não foi possivel ler o sinal, devido a: " + e.ToString()); }
+
             
+
         }
 
-        private void Checkconnection()
+        public TypeInfo GetNodeValueType(string sNode)
         {
-            if(!(oConnection.State == OpcClientState.Connected))
-            {
-                try
+
+            ReadValueId node = new ReadValueId();
+            node.NodeId = new NodeId(sNode);
+            node.AttributeId = Attributes.Value;
+
+            ReadValueIdCollection readnodes = new ReadValueIdCollection();
+            readnodes.Add(node);
+
+            DataValueCollection ResultRead = new DataValueCollection();
+            DiagnosticInfoCollection Diagnostic = new DiagnosticInfoCollection();
+
+            try
+            { 
+                this.oSession.Read(null, 10.0, new TimestampsToReturn(), readnodes, out ResultRead, out Diagnostic);
+
+                if (ResultRead.Count > 0)
                 {
-                    oConnection.Connect();
+                    return ResultRead[0].WrappedValue.TypeInfo;
                 }
-                catch (Exception e)
-                {
-                    throw new Exception(e.Message);
-                }
+                else return null;
+
             }
+            catch(Exception e) 
+            { throw new Exception("Não foi possivel ler o sinal, devido a: " + e.ToString());}
+
         }
+
+
     }
 }
