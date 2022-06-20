@@ -1,0 +1,10 @@
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\bin\Debug\netcoreapp3.1\Driver.deps.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\bin\Debug\netcoreapp3.1\Driver.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\bin\Debug\netcoreapp3.1\Driver.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.csproj.AssemblyReference.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.AssemblyInfoInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.AssemblyInfo.cs
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.csproj.CoreCompileInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\Driver\Driver\obj\Debug\netcoreapp3.1\Driver.pdb

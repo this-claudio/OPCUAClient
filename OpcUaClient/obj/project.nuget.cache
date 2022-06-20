@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "mYrZXCt134PePx6CN6yM4u9wPyEpzBzPNtPCOJmeGjYDHeKMdIc1aD2K9z3BLqrcAvh+XSzNRRUrCn7upZUHKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\silvacla\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\opc.uafx.client\\2.26.0\\opc.uafx.client.2.26.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.codedom\\4.7.0\\system.codedom.4.7.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.management\\4.7.0\\system.management.4.7.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.private.servicemodel\\4.5.3\\system.private.servicemodel.4.5.3.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.reflection.dispatchproxy\\4.5.0\\system.reflection.dispatchproxy.4.5.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\silvacla\\.nuget\\packages\\system.servicemodel.primitives\\4.5.3\\system.servicemodel.primitives.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\bin\Debug\netcoreapp3.1\OpcUaCommon.deps.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\bin\Debug\netcoreapp3.1\OpcUaCommon.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\bin\Debug\netcoreapp3.1\OpcUaCommon.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.csproj.AssemblyReference.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.AssemblyInfoInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.AssemblyInfo.cs
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.csproj.CoreCompileInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaInterface\OpcUaCommon\obj\Debug\netcoreapp3.1\OpcUaCommon.pdb
