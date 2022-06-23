@@ -3328,11 +3328,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
+      "projectUniqueName": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3 - Apresentação 30-05-22\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
       "projectName": "OpcUaClient",
-      "projectPath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
+      "projectPath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3 - Apresentação 30-05-22\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
       "packagesPath": "C:\\Users\\silvacla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3\\OpcUaClient\\OpcUaClient\\obj\\",
+      "outputPath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3 - Apresentação 30-05-22\\OpcUaClient\\OpcUaClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

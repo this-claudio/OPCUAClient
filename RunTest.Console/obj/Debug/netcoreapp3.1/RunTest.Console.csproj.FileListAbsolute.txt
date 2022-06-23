@@ -81,3 +81,32 @@ C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\P
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.dll
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.pdb
 C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3\OpcUaClient(OPC Fundation)\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.genruntimeconfig.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.exe
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.deps.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.runtimeconfig.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.runtimeconfig.dev.json
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\RunTest.Console.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Bindings.Https.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Client.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Configuration.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Core.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Gds.Client.Common.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Gds.Server.Common.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Security.Certificates.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\Opc.Ua.Server.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\OpcUaClient.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\bin\Debug\netcoreapp3.1\OpcUaClient.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.csproj.AssemblyReference.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.AssemblyInfoInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.AssemblyInfo.cs
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.csproj.CoreCompileInputs.cache
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.csproj.CopyComplete
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.dll
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.pdb
+C:\Users\silvacla\Google Drive\Aulas\2022-1\Redes Industriais de Comunicação\Prova 3 - Apresentação 30-05-22\OpcUaClient\RunTest.Console\obj\Debug\netcoreapp3.1\RunTest.Console.genruntimeconfig.cache

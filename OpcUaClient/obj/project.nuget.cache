@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q918GzyWrpMaiI+OqiBimWgxwrohX6cZvFb2nuJaXBeq2PkyBH6Q9hL/yErHYB/fDltfZEelsV2LSKBLr+XEkg==",
+  "dgSpecHash": "/NoTGq20VLukudQQCHPnCcphRTid+w7eQRmw6mv/4tpNa7zwo4GN54tnqCHZrZLdYNp52a0WGPfu6EiNZWFCtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
+  "projectFilePath": "C:\\Users\\silvacla\\Google Drive\\Aulas\\2022-1\\Redes Industriais de Comunicação\\Prova 3 - Apresentação 30-05-22\\OpcUaClient\\OpcUaClient\\OpcUaClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\silvacla\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.23\\microsoft.extensions.logging.abstractions.3.1.23.nupkg.sha512",
     "C:\\Users\\silvacla\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
