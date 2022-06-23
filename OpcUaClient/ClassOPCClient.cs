@@ -36,13 +36,10 @@
  * ======================================================================*/
 
 
-using Opc.Ua;   // Install-Package OPCFoundation.NetStandard.Opc.Ua
+using Opc.Ua;   
 using Opc.Ua.Client;
 using Opc.Ua.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net;
 
 namespace OpcUaCommon
 {
@@ -55,6 +52,8 @@ namespace OpcUaCommon
         public string sUser { get; set; }
         public string sPassWord { get; set; }
         public Session oSession { get; set; }
+
+        public EstadoConexao SessioStatus { get; set; }
         public int ReconnectPeriod { get; private set; }
 
         public ClassOPCClient(string sEndereco, string sPorta, string sUser = "", string sPassWord = "")
@@ -64,6 +63,8 @@ namespace OpcUaCommon
             this.sUser = sUser;
             this.sPassWord = sPassWord;
             ReconnectPeriod = 10;
+            this.SessioStatus = new EstadoConexao();
+            this.SessioStatus = EstadoConexao.Desconectado;
         }
 
 
@@ -112,6 +113,10 @@ namespace OpcUaCommon
             this.oSession = Session.Create(config, new ConfiguredEndpoint(null, oSelectedEndpoint, EndpointConfiguration.Create(config)), false, "", 60000, oNewUser, null).GetAwaiter().GetResult();
             this.oSession.KeepAlive += ClientKeepAlive;
 
+            if (this.oSession.Connected) this.SessioStatus = EstadoConexao.Conectado;
+            else this.SessioStatus = EstadoConexao.Desconectado;
+
+
         }
 
         private void ClientKeepAlive(Session sender, KeepAliveEventArgs e)
@@ -122,6 +127,7 @@ namespace OpcUaCommon
 
                 if (reconnectHandler == null)
                 {
+                    this.SessioStatus = EstadoConexao.Reconectando;
                     Console.WriteLine("--- RECONNECTING ---");
                     reconnectHandler = new SessionReconnectHandler();
                     reconnectHandler.BeginReconnect(sender, ReconnectPeriod * 1000, Client_ReconnectComplete);
@@ -140,7 +146,7 @@ namespace OpcUaCommon
             this.oSession = reconnectHandler.Session;
             reconnectHandler.Dispose();
             reconnectHandler = null;
-
+            this.SessioStatus = EstadoConexao.Conectado;
             Console.WriteLine("--- RECONNECTED ---");
         }
 
@@ -232,6 +238,16 @@ namespace OpcUaCommon
             { throw new Exception("Não foi possivel ler o sinal, devido a: " + e.ToString());}
 
         }
+
+        public enum EstadoConexao
+        { 
+            Conectado,
+            Desconectado,
+            Reconectando,
+            Desconectando,
+            Indefinido
+        }
+
 
 
     }
