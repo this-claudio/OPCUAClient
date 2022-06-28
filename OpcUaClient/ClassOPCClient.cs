@@ -104,9 +104,11 @@ namespace OpcUaCommon
             application.CheckApplicationInstanceCertificate(false, 2048).GetAwaiter().GetResult();
             //var servers = CoreClientUtils.DiscoverServers(config);
 
-            bool UserSeguranca = (string.IsNullOrEmpty(sUser) || string.IsNullOrEmpty(sPassWord)) ? false : true;
+            bool UsarSeguranca = (string.IsNullOrEmpty(sUser) || string.IsNullOrEmpty(sPassWord)) ? false : true;
 
-            EndpointDescription oSelectedEndpoint = CoreClientUtils.SelectEndpoint("opc.tcp://SQO-053.mshome.net:4840", useSecurity: UserSeguranca);
+            string StringConexao = "opc.tcp://" + this.sEndereco + ":" + this.nPorta.ToString();
+
+            EndpointDescription oSelectedEndpoint = CoreClientUtils.SelectEndpoint(StringConexao , useSecurity: UsarSeguranca);
             UserIdentity oNewUser = (string.IsNullOrEmpty(sUser) || string.IsNullOrEmpty(sPassWord)) ? null : new UserIdentity(this.sUser,this.sPassWord);
 
             Console.WriteLine($"Step 2 - Create a session with your server: {oSelectedEndpoint.EndpointUrl} ");

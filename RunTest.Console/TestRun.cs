@@ -9,7 +9,7 @@ namespace MyHomework
         static void Main(string[] args)
         {
 
-            var Cliente = new ClassOPCClient("your-ip", "4840","abcd","1234");
+            var Cliente = new ClassOPCClient("SQO-053.mshome.net", "4840","abcd","1234");
             Cliente.Conectar();
             string Connected = Cliente.oSession.Connected.ToString();
 
